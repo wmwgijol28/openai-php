@@ -32,10 +32,10 @@ final class CreateResponseResult
         $categories = [];
 
         foreach (Category::cases() as $category) {
-            $categories[$category->value] = CreateResponseCategory::from([
-                'category' => $category->value,
-                'violated' => $attributes['categories'][$category->value],
-                'score' => $attributes['category_scores'][$category->value],
+            $categories[$category] = CreateResponseCategory::from([
+                'category' => $category,
+                'violated' => $attributes['categories'][$category],
+                'score' => $attributes['category_scores'][$category],
             ]);
         }
 
@@ -53,8 +53,8 @@ final class CreateResponseResult
         $categories = [];
         $categoryScores = [];
         foreach ($this->categories as $category) {
-            $categories[$category->category->value] = $category->violated;
-            $categoryScores[$category->category->value] = $category->score;
+            $categories[$category->category] = $category->violated;
+            $categoryScores[$category->category] = $category->score;
         }
 
         return [

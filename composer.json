@@ -24,6 +24,7 @@
     "require-dev": {
         "guzzlehttp/guzzle": "^7.6.1",
         "guzzlehttp/psr7": "^2.5.0",
+        "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^5.11.0",
         "pestphp/pest": "^1.23.0",
         "phpstan/phpstan": "^1.10.15",

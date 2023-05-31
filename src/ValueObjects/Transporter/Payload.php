@@ -172,7 +172,7 @@ final class Payload
             }
         }
 
-        $request = $psr17Factory->createRequest($this->method->value, $uri);
+        $request = $psr17Factory->createRequest($this->method, $uri);
 
         if ($body !== null) {
             $request = $request->withBody($body);

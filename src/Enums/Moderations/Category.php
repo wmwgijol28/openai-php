@@ -21,7 +21,12 @@ final class Category
 
     public static function from(string $category): ?string
     {
-        $constant = self::class . '::' . $category;
+
+        $categoryArr = preg_split('/[-\/]/', $category);
+        $categoryArr = array_map('ucfirst', $categoryArr);
+
+        $constant = self::class . '::' . implode('',$categoryArr);
+
         if (defined($constant)) {
             return constant($constant);
         }

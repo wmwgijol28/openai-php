@@ -28,8 +28,8 @@ test('create', function () {
         ->categories->toHaveCount(7)
         ->each->toBeInstanceOf(CreateResponseCategory::class);
 
-    expect($result->results[0]->categories[Category::Hate])
-        ->category->toBe(Category::Hate)
+    expect($result->results[0]->categories[Category::from(Category::Hate)])
+        ->category->toBe(Category::from(Category::Hate))
         ->violated->toBe(false)
         ->score->toBe(0.22714105248451233);
 });

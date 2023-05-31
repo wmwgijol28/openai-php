@@ -30,9 +30,9 @@ final class TranscriptionResponse implements ResponseContract
     /**
      * @param  array<int, TranscriptionResponseSegment>  $segments
      */
-    private function __construct(string $task,
-                                 string $language,
-                                 float  $duration,
+    private function __construct(?string $task,
+                                 ?string $language,
+                                 ?float  $duration,
                                  array  $segments,
                                  string $text)
     {
